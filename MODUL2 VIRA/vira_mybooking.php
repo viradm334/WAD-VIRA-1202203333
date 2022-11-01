@@ -1,5 +1,5 @@
 <?php 
-    $name = $_POST['name'];
+    $nama = $_POST['name'];
     $date = $_POST['date'];
     $time = $_POST['checkin'];
     $masuk = date('d-m-Y', strtotime($date)) ." ". date('H:i:s', strtotime($time));
@@ -92,7 +92,7 @@
 
             <tb>
               <tr>
-                <td><?php echo rand();?></td>
+                <td><?php echo rend();?></td>
                 <td><?php echo $name;?></td>
                 <td><?php echo $masuk;?></td>
                 <td><?php echo $keluar;?></td>
