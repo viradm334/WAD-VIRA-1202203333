@@ -1,5 +1,5 @@
 <?php 
-  $nama_mobil = isset($_POST['mobil']) ? $_POST['mobil'] : " ";
+  $namamobil = isset($_POST['mobil']) ? $_POST['mobil'] : " ";
 ?>
 
 <!doctype html>
