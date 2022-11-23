@@ -20,7 +20,7 @@ if (isset($_POST['simpan'])) {
     $merk = $_POST['merk'];
     $tanggalbeli = $_POST['tanggalbeli'];
     $deskripsi = $_POST['deskripsi'];
-    $fotomobil = $_FILES['fotomobil']['name'];
+    $foto_mobil = $_FILES['fotomobil']['name'];
     move_uploaded_file($_FILES['fotomobil']['tmp_name'],$direktori.$fotomobil);
     $status = $_POST['status'];
 

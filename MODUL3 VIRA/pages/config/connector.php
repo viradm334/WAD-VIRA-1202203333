@@ -3,7 +3,7 @@
 $host='127.0.0.1:3307';
 $username='root';
 $password='';
-$database='showroom_vira_table';
+$database='showroom_vira_tabel';
 
 $koneksi = mysqli_connect($host,$username,$password,$database);
 
