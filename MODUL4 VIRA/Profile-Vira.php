@@ -1,6 +1,6 @@
 <?php
 require "config/connector.php";
-session_start();
+session();
 
 $pilihan_warna = [
     "primary" => "Blue",
