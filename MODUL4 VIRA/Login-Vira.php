@@ -1,6 +1,6 @@
 <?php
 
-cookie_start();
+session_start();
 
 include 'config/connector.php';
 

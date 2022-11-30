@@ -3,7 +3,7 @@
 include 'config/connector.php';
 
 if(isset($_POST["register"])) {
-    $name = $_POST["nama"];
+    $nama = $_POST["nama"];
     $email = strtolower($_POST["email"]);
     $password = mysqli_real_escape_string($koneksi2, $_POST["password"]);
     $konfirmasi_password = mysqli_real_escape_string($koneksi2, $_POST["konfirmasi_password"]);
