@@ -138,21 +138,20 @@ class CustomAuthController extends Controller
    public function listcar()
    {
         $data = array();
-        $mobil = array();
+        //$mobil = array();
 
         if (session()->has('loginId')) {
             $data = User::where('id', '=', session()->get('loginId'))->first();
-            $mobil = Showroom::where('id', '=', session()->get('loginId'))->first();
+            $mobil = Showroom::all();
         }
 
         return view("listcar", compact('mobil', 'data'));
    }
 
-   public function cardetail()
+   public function cardetail($id)
    {
-        $data = array();
         if (session()->has('loginId')) {
-            $data = Showroom::where('id', '=', session()->get('loginId'))->first();
+            $mobil = Showroom::find($id);
         }
         return view("cardetail", compact('data'));
    }
@@ -174,4 +173,12 @@ class CustomAuthController extends Controller
         }
         return view("edit", compact('data'));
    }
+
+   public function delete($id)
+   {
+        $mobil = Showroom::find($id);
+        $mobil->delete();
+
+        return redirect()->route('listcar')->with('success', 'Data berhasil dihapus');
+       }
 }

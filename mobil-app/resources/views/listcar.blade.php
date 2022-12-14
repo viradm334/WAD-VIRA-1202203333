@@ -54,12 +54,12 @@
                 </p>
             </div>
             <div class="row">
-                @foreach((array)$mobil as $row)
+                @foreach($mobil as $row)
                 <div class="card" style="width: 18rem; margin: 5px; box-shadow: 0px 5px 15px 0px rgba(0, 0, 0, 0.35);">
-                        <img src="images/{{$mobil->image}}" class="card-img-top" alt="..." width="200px" height="200px">
+                        <img src="images/{{$row->image}}" class="card-img-top" alt="..." width="200px" height="200px">
                         <div class="card-body">
-                            <h5 class="card-title">{{$mobil->name}}</h5>
-                            <p class="card-text">{{$mobil->description}}</p>
+                            <h5 class="card-title">{{$row->name}}</h5>
+                            <p class="card-text">{{$row->description}}</p>
                             <a href=""><button type="button" class="btn btn-primary">Detail</button></a>
                             <a href="" onclick="return confirm('Anda yakin untuk menghapus item?')"><button type="button" class="btn btn-danger" id="deleted">Delete</button></a>
                         </div>

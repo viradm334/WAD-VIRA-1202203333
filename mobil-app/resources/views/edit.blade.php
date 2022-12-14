@@ -11,24 +11,34 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg">
+    <nav class="navbar navbar-expand navbar-dark bg-primary">
         <div class="container py-2">
+            @if(session()->has('loginId'))
             <div class="navbar-nav">
-                <a class="nav-link" href="index.php">Home</a>
-                <a class="nav-link" href="ListCar-Vira.php">MyCar</a>
+                <a class="nav-link active" aria-current="page" href="home">Home</a>
+                <a class="nav-link" href="listcar">MyCar</a>
             </div>
             <div class="d-flex">
-                <a href="Add-Vira.php" class="btn btn-light text-<?= isset($_COOKIE["warna_navbar"])  ? $_COOKIE["warna_navbar"] : "primary"; ?>" role="button">Add Car</a>
+                <a href="addcar" class="btn btn-light text-primary" role="button">Add Car</a>
                 <div class="dropdown ms-4">
-                    <button class="btn btn-light text-<?= isset($_COOKIE["warna_navbar"])  ? $_COOKIE["warna_navbar"] : "primary"; ?> dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        <?= $data_login["nama"]; ?>
+                    <button class="btn btn-light dropdown-toggle text-primary" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        @if(session()->has('loginId'))
+                        {{$data->name}}
+                        @endif
                     </button>
                     <ul class="dropdown-menu">
-                        <li><a class="dropdown-item text-<?= isset($_COOKIE["warna_navbar"])  ? $_COOKIE["warna_navbar"] : "primary"; ?>" href="Profile-Vira.php">Profile</a></li>
-                        <li><a class="dropdown-item text-<?= isset($_COOKIE["warna_navbar"])  ? $_COOKIE["warna_navbar"] : "primary"; ?>" href="config/logout.php">Log Out</a></li>
+                        <li><a class="dropdown-item text-primary" href="profile">Profile</a></li>
+                        <li><a class="dropdown-item text-primary" href="logout">Log Out</a></li>
                     </ul>
                 </div>
             </div>
+            @endif
+            @if(!session()->has('loginId'))
+            <div class="navbar-nav w-100 d-flex justify-content-between">
+                <a class="nav-link active" aria-current="page" href="#">Home</a>
+                <a class="nav-link" href="login">Login</a>
+            </div>
+            @endif
         </div>
     </nav>
 
