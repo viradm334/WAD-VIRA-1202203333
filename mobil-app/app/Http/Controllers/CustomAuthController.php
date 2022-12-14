@@ -156,7 +156,7 @@ class CustomAuthController extends Controller
         return view("cardetail", compact('data'));
    }
 
-   public function ()
+   public function profile()
    {
         $data = array();
         if (session()->has('loginId')) {
